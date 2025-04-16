@@ -53,7 +53,7 @@ class PushdownAutomaton:
         return False, []
 
 #In the main, we open the file with the accepted strings and we generate the configuration threes making a doble verification of the accepted strings
-def main():
+def Algoritmo_3():
     try:
         with open("AcceptedStrings.txt", "r", encoding="utf-8") as file: # the utf-8 is used to handle the special characters that may appear
             lines = file.readlines()
@@ -85,4 +85,4 @@ def main():
                 print(f"Processed configuration tree for: {line if line else 'ε'}")
 
 if __name__ == "__main__":
-    main()
+    Algoritmo_3()

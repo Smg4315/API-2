@@ -2,7 +2,7 @@
 import random
 
 #This is the definition of the main function of this algorytm in wich the functions that generates the strings will be called"
-def main():
+def Algoritmo_1():
     print("Welcome to the generator of strings!! How many strings would you like to create (per type - accepted and rejected)?")
     
     num_strings = int(input()) #The user inputs the number of strings that wants to generate
@@ -48,4 +48,4 @@ def generate_invalid_string(n):
     return "".join(random.choices(chars, k=n)) + "a" # We add an "a" at the end of the string to make it invalid mandatorily (because of the random)
 
 if __name__ == "__main__":
-    main()
+    Algoritmo_1()

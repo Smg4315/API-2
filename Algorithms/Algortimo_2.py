@@ -51,7 +51,7 @@ class PushdownAutomaton:
             return True
         return False
 
-def main():
+def Algoritmo_2():
     # We open the file that contains the strings to be evaluated
     try:
         with open("String.txt", "r") as file:
@@ -97,4 +97,4 @@ def main():
         print("\n⚠️ No accepted strings to save. 'AcceptedStrings.txt' was not created.\n")
 
 if __name__ == "__main__":
-    main()
+    Algoritmo_2()
