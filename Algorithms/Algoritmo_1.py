@@ -2,13 +2,10 @@
 import random
 
 #This is the definition of the main function of this algorytm in wich the functions that generates the strings will be called"
-def Algoritmo_1():
-    print("Welcome to the generator of strings!! How many strings would you like to create (per type - accepted and rejected)?")
-    
-    num_strings = int(input()) #The user inputs the number of strings that wants to generate
+def Algoritmo_1(num_strings):
     
     if num_strings <= 0: #We create a verification of the number (must be positive)
-        print("Please enter a valid integer (positive).")
+        print("Please enter a valid integer (positive).") # Verificar de como hacer ese print en la API
         return
     
     valid_strings = set() #list in wich every string is unique
@@ -35,6 +32,8 @@ def Algoritmo_1():
         out_file.write("--- Strings: ---\n")
         out_file.writelines("'" + s + "'" + "\n" for s in valid_strings)
         out_file.writelines("'" + s + "'" + "\n" for s in invalid_strings)
+
+    return("String.txt")
     
 #In this function we create the string that belongs to the grammar: S → aSb | ε in a recusive way.
 def generate_valid_string(n):
