@@ -81,27 +81,31 @@
     document.getElementById('cadenaForm').addEventListener('submit', async function(e) {
       e.preventDefault();
       const cantidad = document.getElementById('cantidad').value;
-
+  
       const respuesta = await fetch('/procesar', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ cantidad: cantidad })
       });
-
+  
       const datos = await respuesta.json();
-
+  
       let html = "";
       html += `<h3>${datos.Algoritmo_1}</h3>`;
-      html += `<pre><strong>Cadenas generadas:</strong>\n${datos.Cadenas_generadas}</pre>`;
-
+      html += `<h3>Cadenas generadas:</h3>`;
+      html += `<pre>${datos.Cadenas_generadas}</pre>`;
+  
       html += `<h3>${datos.Algoritmo_2}</h3>`;
-      html += `<pre><strong>Cadenas aceptadas:</strong>\n${datos.Cadenas_aceptadas}</pre>`;
-
+      html += `<h3>Cadenas aceptadas:</h3>`;
+      html += `<pre>${datos.Cadenas_aceptadas}</pre>`;
+  
       html += `<h3>${datos.Algoritmo_3}</h3>`;
-      html += `<pre><strong>Árboles de configuración:</strong>\n${datos.Arboles_configuracion}</pre>`;
-
+      html += `<h3>Árboles de configuración:</h3>`;
+      html += `<pre>${datos.Arboles_configuracion}</pre>`;
+  
       document.getElementById('resultado').innerHTML = html;
     });
   </script>
+  
 </body>
 </html>
