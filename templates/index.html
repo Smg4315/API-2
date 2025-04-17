@@ -1,33 +1,107 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Generador de Cadenas</title>
+  <title>Generador de Cadenas</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+
+    .container {
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 600px;
+      text-align: center;
+    }
+
+    form {
+      margin-bottom: 20px;
+    }
+
+    input[type="number"] {
+      padding: 8px;
+      width: 100px;
+      margin: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    pre {
+      text-align: left;
+      background-color: #f8f8f8;
+      padding: 10px;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+
+    h1, h2, h3 {
+      color: #333;
+    }
+  </style>
 </head>
+
 <body>
+  <div class="container">
     <h1>Generar y Evaluar Cadenas</h1>
     <form id="cadenaForm">
-        <label for="cantidad">Número de cadenas:</label>
-        <input type="number" id="cantidad" name="cantidad" required>
-        <button type="submit">Ejecutar</button>
+      <label for="cantidad">Número de cadenas:</label>
+      <input type="number" id="cantidad" name="cantidad" required>
+      <button type="submit">Ejecutar</button>
     </form>
 
     <h2>Resultados:</h2>
-    <pre id="resultado"></pre>
+    <div id="resultado"></div>
+  </div>
 
-    <script>
-        document.getElementById('cadenaForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            const cantidad = document.getElementById('cantidad').value;
+  <script>
+    document.getElementById('cadenaForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const cantidad = document.getElementById('cantidad').value;
 
-            const respuesta = await fetch('/procesar', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ cantidad: cantidad })
-            });
+      const respuesta = await fetch('/procesar', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ cantidad: cantidad })
+      });
 
-            const datos = await respuesta.json();
-            document.getElementById('resultado').textContent = JSON.stringify(datos, null, 2);
-        });
-    </script>
+      const datos = await respuesta.json();
+
+      let html = "";
+      html += `<h3>${datos.Algoritmo_1}</h3>`;
+      html += `<pre><strong>Cadenas generadas:</strong>\n${datos.Cadenas_generadas}</pre>`;
+
+      html += `<h3>${datos.Algoritmo_2}</h3>`;
+      html += `<pre><strong>Cadenas aceptadas:</strong>\n${datos.Cadenas_aceptadas}</pre>`;
+
+      html += `<h3>${datos.Algoritmo_3}</h3>`;
+      html += `<pre><strong>Árboles de configuración:</strong>\n${datos.Arboles_configuracion}</pre>`;
+
+      document.getElementById('resultado').innerHTML = html;
+    });
+  </script>
 </body>
 </html>
