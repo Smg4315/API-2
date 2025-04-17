@@ -15,6 +15,14 @@ def Algoritmo_1(num_strings):
     while len(invalid_strings) < num_strings:
         invalid_strings.add(generate_invalid_string(random.randint(0, 10)))
 
+    # We print in console the valid string and the in valid strings generated
+    print("\n --- Strings: ---\n")
+    for j in valid_strings:
+        print("'" + j + "'")
+ 
+    for j in invalid_strings:
+        print("'" + j + "'")
+
     with open("String.txt", "w") as out_file:
         out_file.write("--- Strings: ---\n")
         out_file.writelines("'" + s + "'" + "\n" for s in valid_strings)
