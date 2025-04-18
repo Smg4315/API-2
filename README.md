@@ -9,6 +9,7 @@ This project is a web API developed with **Python and Flask**, designed to gener
 
 ## 📚 Contents
 
+- [🧑‍💻 Developers](#-developers)
 - [✨ Features](#-features)  
 - [⚙️ Requirements](#-requirements)  
 - [📁 Project Structure](#-project-structure)  
@@ -20,6 +21,15 @@ This project is a web API developed with **Python and Flask**, designed to gener
 
 ---
 
+## 🧑‍💻 Developers
+
+```bash
+- Andres Felipe Vélez Álvarez
+- Simon Mazo Gómez
+- Sebastian Salazar Henao
+```
+
+---
 ## ✨ Features
 
 - Simple web interface to enter the number of strings.
@@ -86,6 +96,7 @@ Right Click → Show More Options → Open Git Bash Here
 ```bash
 python App.py
 ```
+
 ![Demo Flow](convertido_25s.gif)
 
 3. Go to your browser and visit:
