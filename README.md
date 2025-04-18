@@ -64,37 +64,58 @@ API-2/
 
 1. Clona este repositorio:
 ```bash
-git clone https://github.com/usuario/mi-api-automata.git
-```
-
-2. Entra en la carpeta del proyecto:
-```bash
-cd mi-api-automata
-```
-
-3. Asegúrate de tener los archivos Python dentro de la carpeta `Algorithms/`.
-
-4. Ejecuta el servidor:
-```bash
-python App.py
+git clone https://github.com/Smg4315/API-2.git
 ```
 
 ---
 
 ## Uso
 
-1. Abre tu navegador y visita:
+- Primer Forma Para Usarlo:
+
+1. Cuando hayas clonado el repositorio, entra en la carpeta del proyecto.
+
+2. Una vez dentro de la carpeta API-2, abre la terminal de Git Bash:
+```bash
+Click Derecho -> Mostrar Mas Opciones -> Open Git Bash Here
+```
+
+3. Ejecuta el servidor:
+```bash
+python App.py
+```
+
+4. Cuando hayas ejecutado el servidor, abre tu navegador y visita:
 ```
 http://localhost:5000
 ```
 
-2. Ingresa un número (ej: 5) y haz clic en "Ejecutar".
+5. Ingresa un número (ej: 5) y haz clic en "Ejecutar".
 
-3. El sistema ejecutará los 3 algoritmos y te mostrará:
+6. El sistema ejecutará los 3 algoritmos y te mostrará:
    - Las cadenas generadas (válidas e inválidas)
    - Las cadenas aceptadas por el autómata
    - Los árboles de configuración
 
+
+- Segunda Forma de Usarlo:
+
+1. Abre la carpeta en un editor de código o en un IDE de programación (especial para python).
+
+2. Entra en el archivo App.py y ejecutalo.
+
+3. Cuando hayas ejecutado el archivo, abre tu navegador y visita:
+```
+http://localhost:5000
+```
+
+4. Ingresa un número (ej: 5) y haz clic en "Ejecutar".
+
+5. El sistema ejecutará los 3 algoritmos y te mostrará:
+   - Las cadenas generadas (válidas e inválidas)
+   - Las cadenas aceptadas por el autómata
+   - Los árboles de configuración
+   
 ---
 
 ## Explicación del funcionamiento
