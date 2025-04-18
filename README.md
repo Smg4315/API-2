@@ -1,5 +1,5 @@
 
-![Automata Banner](https://miro.medium.com/v2/resize:fit:1358/format:webp/1*yXxgBLFnP5-Qyt1MRwVT4g.png)
+![Automata Banner](programacion.png)
 
 # Chain Generation and Evaluation API
 
@@ -86,6 +86,7 @@ Right Click → Show More Options → Open Git Bash Here
 ```bash
 python App.py
 ```
+![Demo Flow](convertido_25s.gif)
 
 3. Go to your browser and visit:
 ```
@@ -94,7 +95,7 @@ http://localhost:5000
 
 4. Enter a number (e.g., 5) and click "Execute".
 
-![Demo Flow](demo_api.gif)
+![Demo Flow](convertido_22s.gif)
 
 ---
 
