@@ -94,6 +94,8 @@ http://localhost:5000
 
 4. Enter a number (e.g., 5) and click "Execute".
 
+![Demo Flow](demo_api.gif)
+
 ---
 
 ### 🔹 Second Way (Using Code Editor)
