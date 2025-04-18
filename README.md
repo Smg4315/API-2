@@ -71,7 +71,7 @@ git clone https://github.com/Smg4315/API-2.git
 
 ## Uso
 
-- Primer Forma Para Usarlo:
+### `Primer Forma Para Usarlo`
 
 1. Cuando hayas clonado el repositorio, entra en la carpeta del proyecto.
 
@@ -98,7 +98,7 @@ http://localhost:5000
    - Los árboles de configuración
 
 
-- Segunda Forma de Usarlo:
+### `Segunda Forma de Usarlo`
 
 1. Abre la carpeta en un editor de código o en un IDE de programación (especial para python).
 
@@ -115,7 +115,7 @@ http://localhost:5000
    - Las cadenas generadas (válidas e inválidas)
    - Las cadenas aceptadas por el autómata
    - Los árboles de configuración
-   
+
 ---
 
 ## Explicación del funcionamiento
