@@ -1,7 +1,7 @@
 # Definición de la API e implementación de los endpoints
 
 #  Tener en cuenta Flask para crear la API.
-import os
+
 from flask import Flask, render_template, request, jsonify
 import subprocess
 import os
