@@ -1,169 +1,161 @@
-# API de Generación y Evaluación de Cadenas
 
-Este proyecto es una API web desarrollada con **Python y Flask**, que permite generar cadenas, evaluarlas con un autómata de pila y generar sus árboles de configuración. Está pensada para propósitos educativos o experimentales en el procesamiento de lenguajes formales.
+![Automata Banner](https://miro.medium.com/v2/resize:fit:1358/format:webp/1*yXxgBLFnP5-Qyt1MRwVT4g.png)
 
----
+# Chain Generation and Evaluation API
 
-## Contenido
-
-- [Características](#caracteristicas)
-- [Requisitos](#requisitos)
-- [Estructura del proyecto](#estructura-del-proyecto)
-- [Instalación](#instalacion)
-- [Uso](#uso)
-- [Explicación del funcionamiento](#explicacion-del-funcionamiento)
-- [Ejemplo de flujo](#ejemplo-de-flujo)
+This project is a web API developed with **Python and Flask**, designed to generate strings, evaluate them with a pushdown automaton, and generate their configuration trees. It is intended for educational or experimental purposes in the field of formal language processing.
 
 ---
 
-## Características
+## 📚 Contents
 
-- Interfaz gráfica web sencilla para ingresar el número de cadenas.
-- Ejecuta 3 algoritmos secuenciales:
-  1. **Generador de cadenas**
-  2. **Evaluador de cadenas con autómata**
-  3. **Generador de árboles de configuración**
-- Muestra resultados directamente en la web:
-  - Cadenas generadas
-  - Cadenas aceptadas
-  - Árboles de configuración
+- [✨ Features](#-features)  
+- [⚙️ Requirements](#-requirements)  
+- [📁 Project Structure](#-project-structure)  
+- [📦 Installation](#-installation)  
+- [🚀 Usage](#-usage)  
+- [🔍 How It Works](#-how-it-works)  
+- [🧪 Example Flow](#-example-flow)  
+- [📄 License](#-license)
 
 ---
 
-## Requisitos
+## ✨ Features
 
-- Python 3.7 o superior
+- Simple web interface to enter the number of strings.
+- Runs 3 sequential algorithms:
+  1. **String Generator**
+  2. **PDA Evaluator**
+  3. **Configuration Tree Generator**
+- Displays results directly on the web:
+  - Generated strings
+  - Accepted strings
+  - Configuration trees
+
+---
+
+## ⚙️ Requirements
+
+- Python 3.7 or later
 - Flask
 
-Instalar Flask:
+To install Flask:
 ```bash
 pip install flask
 ```
 
 ---
 
-## Estructura del proyecto
+## 📁 Project Structure
 
 ```
 API-2/
-├── App.py                        # Archivo principal de la API (Flask)
+├── App.py                        # Main Flask API script
 ├── templates/
-│   └── index.html               # Interfaz web HTML
-├── Algorithms/                 
-│   ├── Algoritmo_1.py          # Generador de cadenas
-│   ├── Algoritmo_2.py          # Evaluador con autómata
-│   └── Algoritmo_3.py          # Generador de árboles de configuración
-├── String.txt                  # Archivo generado con cadenas
-├── AcceptedStrings.txt        # Archivo con cadenas aceptadas
-├── config_trees.txt           # Archivo con árboles de configuración
+│   └── index.html               # HTML Web Interface
+├── Algorithms/
+│   ├── Algoritmo_1.py          # String Generator
+│   ├── Algoritmo_2.py          # PDA Evaluator
+│   └── Algoritmo_3.py          # Configuration Tree Generator
+├── String.txt                  # Generated strings
+├── AcceptedStrings.txt        # Accepted strings
+├── config_trees.txt           # Configuration trees
 ```
 
 ---
 
-## Instalación
+## 📦 Installation
 
-1. Clona este repositorio:
+1. Clone this repository:
 ```bash
 git clone https://github.com/Smg4315/API-2.git
 ```
 
 ---
 
-## Uso
+## 🚀 Usage
 
-### `Primer Forma Para Usarlo`
+### 🔹 First Way (Git Bash)
 
-1. Cuando hayas clonado el repositorio, entra en la carpeta del proyecto.
-
-2. Una vez dentro de la carpeta API-2, abre la terminal de Git Bash:
+1. Open the API-2 folder with Git Bash:
 ```bash
-Click Derecho -> Mostrar Mas Opciones -> Open Git Bash Here
+Right Click → Show More Options → Open Git Bash Here
 ```
 
-3. Ejecuta el servidor:
+2. Run the server:
 ```bash
 python App.py
 ```
 
-4. Cuando hayas ejecutado el servidor, abre tu navegador y visita:
+3. Go to your browser and visit:
 ```
 http://localhost:5000
 ```
 
-5. Ingresa un número (ej: 5) y haz clic en "Ejecutar".
-
-6. El sistema ejecutará los 3 algoritmos y te mostrará:
-   - Las cadenas generadas (válidas e inválidas)
-   - Las cadenas aceptadas por el autómata
-   - Los árboles de configuración
-
-
-### `Segunda Forma de Usarlo`
-
-1. Abre la carpeta en un editor de código o en un IDE de programación (especial para python).
-
-2. Entra en el archivo App.py y ejecutalo.
-
-3. Cuando hayas ejecutado el archivo, abre tu navegador y visita:
-```
-http://localhost:5000
-```
-
-4. Ingresa un número (ej: 5) y haz clic en "Ejecutar".
-
-5. El sistema ejecutará los 3 algoritmos y te mostrará:
-   - Las cadenas generadas (válidas e inválidas)
-   - Las cadenas aceptadas por el autómata
-   - Los árboles de configuración
+4. Enter a number (e.g., 5) and click "Execute".
 
 ---
 
-## Explicación del funcionamiento
+### 🔹 Second Way (Using Code Editor)
 
-La API tiene dos rutas principales:
+1. Open the project in a Python-capable IDE.
 
-### `/`
-- Muestra la interfaz HTML (`index.html`) que contiene el formulario para ingresar el número de cadenas.
+2. Run `App.py`.
 
-### `/procesar` (método POST)
-- Recibe un JSON con la cantidad de cadenas.
-- Ejecuta en orden:
-  1. `Algoritmo_1.py` para generar cadenas.
-  2. `Algoritmo_2.py` para evaluarlas con el autómata.
-  3. `Algoritmo_3.py` para generar los árboles de configuración.
-- Lee los archivos de salida de cada uno:
+3. Visit:
+```
+http://localhost:5000
+```
+
+4. Enter a number and execute the process.
+
+---
+
+## 🔍 How It Works
+
+The API has two main routes:
+
+- `/`  
+  Displays the HTML interface (`index.html`) where you enter the number of strings.
+
+- `/procesar` (POST method)  
+  Accepts JSON input, runs:
+  1. `Algoritmo_1.py` to generate strings  
+  2. `Algoritmo_2.py` to evaluate them  
+  3. `Algoritmo_3.py` to generate configuration trees  
+  
+  Then it returns:
   - `String.txt`
   - `AcceptedStrings.txt`
   - `config_trees.txt`
-- Devuelve todo en formato JSON para que el frontend lo muestre.
+
+Everything is returned in a JSON response to the frontend.
 
 ---
 
-## Ejemplo de flujo
+## 🧪 Example Flow
 
-1. Usuario ingresa: `4`
-2. El sistema genera 4 cadenas válidas y 4 inválidas.
-3. Evalúa cuáles acepta el autómata.
-4. Muestra los resultados estructurados en la interfaz:
+1. The user inputs: `4`
+2. The system generates 4 valid and 4 invalid strings.
+3. Evaluates which are accepted by the automaton.
+4. Displays the result:
 
 ```
-Cadenas generadas correctamente.
-Cadenas generadas:
+Strings generated successfully.
+Generated strings:
 'aaaabbbb'
 'abab'
 ...
 
-Cadenas evaluadas correctamente.
-Cadenas aceptadas:
+Accepted strings:
 'aaaabbbb'
 
-Árboles de configuración generados correctamente.
+Configuration trees generated successfully.
 ...
 ```
 
 ---
 
-## Licencia
+## 📄 License
 
-Este proyecto es libre para uso educativo y demostrativo. Puedes adaptarlo a tus necesidades.
-
+This project is free for educational and demonstrative use. Feel free to adapt it to your needs.
